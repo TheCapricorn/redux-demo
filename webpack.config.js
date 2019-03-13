@@ -14,8 +14,15 @@ module.exports={
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+    devtool: 'cheap-module-source-map',
     module: {
         rules: [
+                {
+                    test: /\.(js|jsx|mjs)$/,
+                    loader: require.resolve('source-map-loader'),
+                    enforce: 'pre',
+                    include: resolveApp('src'),
+                },
                 {
                     test: /\.(js|jsx|mjs)$/,
                     include:resolveApp('src') ,

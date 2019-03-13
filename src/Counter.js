@@ -1,7 +1,12 @@
 import * as React from "react";
+import {connect} from "react-redux"
 
-const Counter=()=>{
-    return( <div>1</div>)
+const Counter=({count})=>{
+    return( <div>{count}</div>)
 }
 
-export default Counter
+const mapStatetoProps=function({add:{count}}){
+    return {count}
+}
+
+export default connect(mapStatetoProps)(Counter)
