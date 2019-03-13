@@ -1,27 +1,33 @@
 const path=require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+// Make sure any symlinks in the project folder are resolved:
+// https://github.com/facebookincubator/create-react-app/issues/637
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+
 module.exports={
-    entry:'./app.js',
+    entry:'./src/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                  loader: 'babel-loader',
-                  options: {
-                    presets: ['@babel/preset-env']
-                  }
-                }
-              }
-        ]
+                {
+                    test: /\.(js|jsx|mjs)$/,
+                    include:resolveApp('src') ,
+                    loader: require.resolve('babel-loader'),
+                    options: {
+                    compact: true,
+                    },
+                
+                },
+            ]
     },
-    devtool: 'inline-source-map',
+
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
@@ -36,6 +42,6 @@ module.exports={
       },
       resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [ ".js", ".json"]
+        extensions: [ ".js", ".json",".jsx"]
     },
 }
