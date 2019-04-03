@@ -17,3 +17,4 @@ const bindActions=bindActionCreators({addCount},store1.dispatch);
 bindActions.addCount(5);
 
 console.log(store1.getState());
+
