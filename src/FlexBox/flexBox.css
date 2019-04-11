@@ -101,3 +101,80 @@
         clear: both;
     }
 
+    .contaniner-3{
+        overflow: hidden;
+    }
+    .item-1{
+        width:30vw;
+        height: 5vh;
+        float: left;
+    }
+    .item-2{
+        width:70vw;
+        height: 5vh;
+        float: left;
+    }
+
+    .stage {
+        width: 800px;
+        height: 800px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* 从何处（哪里）查看一个元素的角度 */
+        /* 从当前视角到对应面的距离  在这里是 stage到ctx的距离 */
+        perspective: 400px;
+        /* 调整角度 */
+        /* perspective-origin: 50% 100%; */
+      }
+  
+      .ctx {
+        /* 3d视角 */
+        transform-style: preserve-3d;
+  
+        /* 把视角推到中心 */
+        transform: translateZ(0px) rotateY(0deg);
+      }
+  
+
+  
+      .face {
+        width: 800px;
+        height: 800px;
+        position: absolute;
+      }
+  
+      .top {
+        background: green;
+        transform: rotateX(90deg) translateZ(400px);
+      }
+  
+      .bottom {
+        background: yellow;
+        transform: rotateX(90deg) translateZ(-400px);
+      }
+  
+      .after {
+        background: red;
+        transform: rotateX(0deg) translateZ(-400px);
+      }
+  
+      .left1 {
+        background: black;
+        transform: rotateY(90deg) translateZ(-400px);
+      }
+  
+      .right2 {
+        background: blue;
+        transform: rotateY(90deg) translateZ(400px);
+      }
+  
+      .first {
+        background: blueviolet;
+        transform: rotateY(0deg) translateZ(400px);
+      }
+
+  
+
+

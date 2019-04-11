@@ -14,29 +14,37 @@ const FlexBox =()=>{
                 <div className="box flex-item flex-item1">1</div>
                 <div className="box flex-item flex-item2">3</div>
             </div>
-            <div className="container-1">
-                <div className="box float-item float-item-1">1</div>
-                <div className="box float-item  item">2</div>
-                <div className="box float-item float-item-2">3</div>
+            <div className="container-3">
+                <div className="box item-1"></div>
+                <div className="box item-2"></div>
+            </div>
+            <div className="stage">
+                <div className="ctx">
+                    <div className="facelist">
+                        <div className=" face first"></div>
+                        <div className=" face after"></div>
+                        <div className=" face top"></div>
+                        <div className=" face bottom"></div>
+                        <div className=" face left1"></div>
+                        <div className=" face right2"></div>
+                    </div>
+                </div>
+               
             </div>
        
-<div class="container-2">
-    <div class="middle">
-        <h4>middle</h4>
-       
-
-
-
-    </div>
-    <div class="left">
-    <h4>left</h4>
-       
-    </div>
-    <div class="right">
-    <h4>right</h4>
-     
-    </div>
-    </div>
+   {/*          <div class="container-2">
+                <div class="middle">
+                    <h4>middle</h4>
+                </div>
+                <div class="left">
+                <h4>left</h4>
+                
+                </div>
+                <div class="right">
+                    <h4>right</h4>
+                
+                </div>
+            </div> */}
 
         </div>
      

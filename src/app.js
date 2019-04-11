@@ -16,6 +16,7 @@ const App=()=>{
             <Counter/>
             <Button/>
             <FlexBox />
+            
         </Provider>
     )
 }
